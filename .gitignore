@@ -1,0 +1,7 @@
+.git
+.svn
+*.json
+*.swp
+__pycache__
+settings.py
+adapter.wsgi

@@ -1,0 +1,54 @@
+{% macro last_update(df) %}{{ df.updated_at.max().strftime("%Y/%m/%d %H:%M:%S") if df.count()[0] > 0 else '' }}{% endmacro %}
+{% macro int2space(var) %}{{ '{:,.0f}'.format(var) if var == var and var != None else '' }}{% endmacro %}
+{% macro dex2space(var) %}{{ '{:,}'.format(var) if var == var and var != None else '' }}{% endmacro %}
+{% macro str2space(var) %}{{ var if var != None else '' }}{% endmacro %}
+{% macro int2asterisk(var) %}{{ '{:,.0f}'.format(var) if var == var and var != None else '***' }}{% endmacro %}
+{% macro dex2asterisk(var) %}{{ '{:,}'.format(var) if var == var and var != None else '***' }}{% endmacro %}
+{% macro str2asterisk(var) %}{{ var if var != None else '***' }}{% endmacro %}
+{% macro date2space(var) %}{{ var.strftime("%Y/%m/%d") if var != None else '' }}{% endmacro %}
+{% macro jcalendar(a, b) %}{{ date2space(a) if session.get('japanese_calendar') != "1" else str2space(b) }}{% endmacro %}
+<!-- Tables -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fa fa-fw fa-hand-pointer-o"></i>
+    データテーブル
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-sm table-bordered" width="100%" id="datatable" cellspacing="0">
+        <thead>
+          <tr>
+            <th class="text-center" style="min-width:50px;">列1</th>
+            <th class="text-center" style="min-width:50px;">列2</th>
+            <th class="text-center" style="min-width:50px;">列3</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th class="text-center" style="min-width:50px;">列1</th>
+            <th class="text-center" style="min-width:50px;">列2</th>
+            <th class="text-center" style="min-width:50px;">列3</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {% for i,df in dfs.iterrows() %}
+          <tr>
+            <td class="text-sm-right">
+              {{ str2space(df[0]) }}
+            </td>
+            <td class="text-sm-right">
+              {{ str2space(df[1]) }}
+            </td>
+            <td class="text-sm-right">
+              {{ str2space(df[2]) }}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">
+    最終更新日時 : 2018/01/01 00:00:00
+  </div>
+</div>

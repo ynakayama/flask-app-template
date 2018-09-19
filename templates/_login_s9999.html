@@ -1,0 +1,38 @@
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">{{ session.get('app_name') }}</div>
+      <div class="card-body">
+        <!-- Alert Message -->
+        {% include '_alert_message.html' %}
+        <form role="form" action='{{ session.get('root') }}/dashboard' method='post'>
+          <div class="form-group">
+            <label for="LoginId">Login ID</label>
+            <input class="form-control" id="LoginId" name="id" type="input" placeholder="Login ID" autofocus>
+          </div>
+          <div class="form-group">
+            <label for="Password">Password</label>
+            <input class="form-control" id="Password" name="password" type="password" placeholder="Password" value="">
+          </div>
+          <input class='btn btn-lg btn-success btn-block btn-signin' data-disable-with='送信中...' name='commit' type='submit' value='ログイン'>
+        </form>
+        <div class="text-center">
+          <a class="d-block" target="_blank" href="https://www.dts.co.jp/inquiry/">パスワードを忘れた場合</a>
+        </div>
+        <div class="text-center">
+          <a class="btn btn-lg btn-info btn-block" target="_blank" href="http://www.dts.co.jp/">サインアップする</a>
+        </div>
+        <div class="text-center">
+          <a class="d-block" target="_blank" href="https://www.dts.co.jp/inquiry/">お問い合わせ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{ session.get('root') }}/vendor/jquery/jquery.min.js"></script>
+  <script src="{{ session.get('root') }}/vendor/popper/popper.min.js"></script>
+  <script src="{{ session.get('root') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{{ session.get('root') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
+</body>
+

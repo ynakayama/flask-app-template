@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{{ session.get('title') }} - {{ session.get('app_name') }}</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{{ session.get('root') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <!-- <link href="{{ session.get('root') }}/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Plugin CSS -->
+    <link href="{{ session.get('root') }}/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+
+    <!-- Bootstrap Datepicker CSS -->
+    <link href="{{ session.get('root') }}/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.standalone.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="{{ session.get('root') }}/css/{{ session.get('sid') }}/custom.css" rel="stylesheet">
+    <link href="{{ session.get('root') }}/css/responsive-tables.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="{{ session.get('root') }}/vendor/jquery/jquery.min.js"></script>
+    <script src="{{ session.get('root') }}/vendor/popper/popper.min.js"></script>
+    <script src="{{ session.get('root') }}/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ session.get('root') }}/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="{{ session.get('root') }}/vendor/chart.js/Chart.min.js"></script>
+    <script src="{{ session.get('root') }}/vendor/datatables/jquery.dataTables.js"></script>
+    <script src="{{ session.get('root') }}/vendor/datatables/dataTables.bootstrap4.js"></script>
+
+    <!-- Bootstrap Datepicker -->
+    <script src="{{ session.get('root') }}/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <script src="{{ session.get('root') }}/vendor/bootstrap-datepicker/js/bootstrap-datepicker.ja.min.js"></script>
+  </head>
+
+  <body class="fixed-nav sticky-footer bg-dark" id="page-top">
+
+{% block content %}{% endblock %}
+
+  <script src="{{ session.get('root') }}/js/jquery-common.js"></script>
+  <script src="{{ session.get('root') }}/js/responsive-tables.js"></script>
+
+  </body>
+
+</html>

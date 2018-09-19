@@ -1,0 +1,47 @@
+<ul class="navbar-nav navbar-sidenav">
+  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ダッシュボード">
+    <a class="nav-link" href="{{ session.get('root') }}/dashboard">
+      <i class="fa fa-fw fa-dashboard"></i>
+      <span class="nav-link-text">
+        ダッシュボード</span>
+    </a>
+  </li>
+  <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ユーザー情報">
+    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseProfile">
+      <i class="fa fa-fw fa-user"></i>
+      <span class="nav-link-text">
+        ユーザー情報</span>
+    </a>
+    <ul class="sidenav-second-level collapse" id="collapseProfile">
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="お知らせ">
+        <a class="nav-link" href="{{ session.get('root') }}/notification">
+          <i class="fa fa-fw fa-bell"></i>
+          <span class="nav-link-text">
+            お知らせ</span>
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="パスワード変更">
+        <a class="nav-link" href="{{ session.get('root') }}/change_password">
+          <i class="fa fa-fw fa-wrench"></i>
+          <span class="nav-link-text">
+            パスワード変更</span>
+        </a>
+      </li>
+      <li class="nav-item" data-toggle="tooltip" data-placement="right" title="ログイン履歴">
+        <a class="nav-link" href="{{ session.get('root') }}/login_history">
+          <i class="fa fa-fw fa-calendar"></i>
+          <span class="nav-link-text">
+            ログイン履歴</span>
+
+        </a>
+      </li>
+    </ul>
+  </li>
+</ul>
+<ul class="navbar-nav sidenav-toggler">
+  <li class="nav-item">
+    <a class="nav-link text-center" id="sidenavToggler">
+      <i class="fa fa-fw fa-angle-left"></i>
+    </a>
+  </li>
+</ul>

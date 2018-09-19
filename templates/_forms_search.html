@@ -1,0 +1,22 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fa fa-search"></i>
+    検索
+  </div>
+
+  <div class="card-body">
+    <p>
+      期間を指定して表示します。
+    </p>
+    <form role="form" action="{{ session.get('root') }}/search" method='post'>
+      <div class="form-group">
+        <input style="width:50%;" class="form-control datepicker" type="input" name="search_from" placeholder="開始日 (YYYY/MM/DD)" pattern="^([1-9]{1}[0-9]{3})\/([0-1][0-9])\/([0-3][0-9])$" title="YYYY/MM/DD" value="{{search_from}}" required>
+      </div>
+      <div class="form-group">
+        <input style="width:50%;" class="form-control datepicker" type="input" name="search_to" placeholder="終了日 (YYYY/MM/DD)" pattern="^([1-9]{1}[0-9]{3})\/([0-1][0-9])\/([0-3][0-9])$" title="YYYY/MM/DD" value="{{search_to}}" required>
+      </div>
+      <input class='btn btn-primary' data-disable-with='送信中...' name='commit' type='submit' value='検索'>
+    </form>
+
+  </div>
+</div>

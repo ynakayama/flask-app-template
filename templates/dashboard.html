@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Navigation -->
+{% include '_nav_main.html' %}
+
+<div class="content-wrapper py-3">
+
+  <div class="container-fluid">
+
+    <!-- Alert Message -->
+    {% include '_alert_message.html' %}
+
+    <!-- Icon Cards -->
+    {% include '_icon_cards_s' + session.get('sid') + '.html' %}
+
+    <!-- Data Tables -->
+    {% include '_datas.html' %}
+
+    <!-- Data Tables -->
+    {% include '_data_tables.html' %}
+
+    <!-- Search -->
+    {% include '_forms_search.html' %}
+
+  </div>
+  <!-- /.container-fluid -->
+
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Scroll to Top Button -->
+{% include '_angle_up.html' %}
+
+<!-- Logout Modal -->
+{% include '_logout_modal.html' %}
+
+<!-- Custom scripts for this template -->
+<script src="{{ session.get('root') }}/js/chart/pie-chart.js"></script>
+<script src="{{ session.get('root') }}/js/chart/bar-chart.js"></script>
+<script src="{{ session.get('root') }}/js/datatable/datatable.js"></script>
+<script src="{{ session.get('root') }}/js/datepicker/datepicker.js"></script>
+{% endblock %}

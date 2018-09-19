@@ -1,0 +1,11 @@
+Header set X-FRAME-OPTIONS "DENY"
+Header always set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options: nosniff
+Header always edit Set-Cookie (.*) "$1; HTTPOnly"
+Header always edit Set-Cookie (.*) "$1; Secure"
+Header set Pragma no-cache
+AddType application/vnd.ms-fontobject .eot
+AddType application/font-woff .woff
+AddType application/x-font-truetype .ttf
+AddType image/svg+xml .svg
+AddType application/x-font-opentype .otf

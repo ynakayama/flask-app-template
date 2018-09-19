@@ -1,0 +1,30 @@
+<li class="nav-item dropdown">
+  <a class="nav-link dropdown-toggle mr-xl-2" id="messagesDropdown" href="{{ session.get('root') }}/notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <i class="fa fa-fw fa-bell"></i>
+    <span class="d-xl-none">新着お知らせ
+    <span class="badge badge-pill badge-warning">{{ notifications.count()[0] }} 件</span>
+    </span>
+    {% if notifications.count()[0] > 0 %}
+    <span class="indicator text-warning d-none d-xl-block">
+      <i class="fa fa-fw fa-circle"></i>
+    </span>
+    {% endif %}
+  </a>
+  <div class="dropdown-menu" aria-labelledby="messagesDropdown">
+    <h6 class="dropdown-header">新着お知らせ:</h6>
+    {% for i,notification in notifications.iterrows() %}
+    {% if i < 3 %}
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="{{ session.get('root') }}/notification">
+      <strong>{{ notification[0] }}</strong>
+      <span class="small float-right text-muted">2018/01/01 00:00:00</span>
+      <div class="dropdown-message small">{{ notification[1] }}</div>
+    </a>
+    {% endif %}
+    {% endfor %}
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item small" href="{{ session.get('root') }}/notification">
+      すべてのお知らせを表示する
+    </a>
+  </div>
+</li>

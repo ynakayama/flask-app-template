@@ -1,0 +1,26 @@
+body {
+  background-image: url("/images/background.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  z-index: 0;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: inherit;
+  filter: blur(2px);
+  z-index: -1;
+}
+
+.text_against_picture{
+  text-shadow: 0 0 10px #333;
+  color: #ffffff;
+}

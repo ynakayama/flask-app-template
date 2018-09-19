@@ -1,0 +1,68 @@
+{% macro last_update(df) %}{{ df.updated_at.max().strftime("%Y/%m/%d %H:%M:%S") if df.count()[0] > 0 else '' }}{% endmacro %}
+<div id="deposit-received">
+</div>
+
+<div class="row">
+
+  <div class="col-lg-4">
+    <!-- Pie Chart -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-pie-chart"></i>
+        円グラフ
+      </div>
+      <div class="card-body">
+        <canvas id="pieChart" width="125" height="125" style="max-width:400px;"></canvas>
+      </div>
+      <div class="card-footer small text-muted">
+        最終更新日時 : 2018/01/01 00:00:00
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <!-- Bar Chart -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-bar-chart"></i>
+        棒グラフ
+      </div>
+      <div class="card-body">
+        <canvas id="barChart" width="135" height="135" style="max-width:400px;"></canvas>
+      </div>
+      <div class="card-footer small text-muted">
+        最終更新日時 : 2018/01/01 00:00:00
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-4">
+    <!-- Deposit Receiveds -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <i class="fa fa-yen"></i>
+        データ
+      </div>
+      <div class="card-body">
+        <span width="135" height="135">
+        {% for i,data in datas.iterrows() %}
+          {% if i < 3 %}
+          <div class="h4 mb-0 text-center">
+            {{ data[1] }}
+          </div>
+          <div class="small text-muted text-center">{{ data[0] }}</div>
+          {% if i < 2 %}
+          <hr>
+          {% endif %}
+          {% endif %}
+        {% endfor %}
+        </span>
+      </div>
+      <div class="card-footer small text-muted">
+        最終更新日時 : 2018/01/01 00:00:00
+      </div>
+    </div>
+
+  </div>
+
+</div>

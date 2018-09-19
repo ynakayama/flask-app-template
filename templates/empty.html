@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<!-- Navigation -->
+{% include '_nav_main.html' %}
+
+<div class="content-wrapper py-3">
+
+  <div class="container-fluid">
+
+    <!-- Alert Message -->
+    {% include '_alert_message.html' %}
+
+    <!-- Breadcrumbs -->
+    {% include '_breadcrumbs.html' %}
+
+    <!-- Data Tables -->
+    {% include '_empty.html' %}
+
+  </div>
+  <!-- /.container-fluid -->
+
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Scroll to Top Button -->
+{% include '_angle_up.html' %}
+
+<!-- Logout Modal -->
+{% include '_logout_modal.html' %}
+
+{% endblock %}
