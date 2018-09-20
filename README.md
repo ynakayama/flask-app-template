@@ -6,6 +6,16 @@ Flask App Template
 Get Started
 -----------
 
+Download [Anaconda](https://www.anaconda.com/) and install some packages.
+
+``` html
+$ pip install flask
+$ pip install beaker
+$ pip install python-memcached
+```
+
+Run server.
+
 ``` html
 $ foreman start -p 3000
 ```
