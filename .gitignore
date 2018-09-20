@@ -3,4 +3,3 @@
 *.json
 *.swp
 __pycache__
-adapter.wsgi
