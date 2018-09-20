@@ -17,7 +17,7 @@ $ pip install python-memcached
 Run server.
 
 ``` html
-$ foreman start -p 3000
+$ python app.py -p 3000
 ```
 
 Open URL localhost:3000
